@@ -1,7 +1,7 @@
 //nth node from last=(m-n+1) from satrt ==>from a.p formula
 package linked_list;
 import java.util.*;
-public class deleting_nth_node_from_end
+public class displaying_nth_node_from_end
 {
      public static class Node 
     {

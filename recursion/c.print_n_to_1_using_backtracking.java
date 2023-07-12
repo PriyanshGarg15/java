@@ -1,6 +1,6 @@
 package recursion.basic_problems;
 import java.util.Scanner;
-public class print_n_to_1 {
+public class c.print_n_to_1_using_backtracking{
 
     public static void printPriyansh(int n) {
         if (n <= 0) {

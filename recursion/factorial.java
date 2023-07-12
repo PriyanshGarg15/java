@@ -6,8 +6,7 @@ public class print_increasing_decreasing {
         if (n == 0) {
             return 1;
         }
-        int d = n * dec(n - 1);
-        return d;
+        return n * dec(n - 1);;
     }
 
     public static void main(String[] args) {

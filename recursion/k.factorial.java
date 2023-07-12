@@ -1,12 +1,12 @@
 package recursion;
 import java.util.*;
 
-public class print_increasing_decreasing {
+public class factorial {
     public static int dec(int n) {
         if (n == 0) {
             return 1;
         }
-        return n * dec(n - 1);;
+        return n * dec(n - 1);
     }
 
     public static void main(String[] args) {

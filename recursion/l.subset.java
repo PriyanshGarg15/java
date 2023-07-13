@@ -1,50 +1,41 @@
 package recursion;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class subset_having_given_sum 
+public class subsets 
 {
-   public static ArrayList<ArrayList<Integer>> subset(int[] arr, int s)
+   public static ArrayList<ArrayList<Integer>> subset(int[] arr)
    {
-      ArrayList<Integer> curr = new ArrayList<Integer>();
-      ArrayList<ArrayList<Integer>> ans = new ArrayList<ArrayList<Integer>>();
-      subsets(arr, 0, curr, ans, s);
+      ArrayList<Integer> curr=new ArrayList<Integer>();
+      ArrayList<ArrayList<Integer>> ans=new ArrayList<ArrayList<Integer>>();
+      subsets(arr,0,curr,ans);
       return ans;
+
    }
-   
-   public static void subsets(int[] arr, int i, ArrayList<Integer> curr, ArrayList<ArrayList<Integer>> ans, int s)
+   public static void subsets(int[] arr,int i,ArrayList<Integer> curr,ArrayList<ArrayList<Integer>> ans)
    {
-      if(i == arr.length)
+      if(i==arr.length)
       {
-         int sum = 0;
-         for(int j=0;j<curr.size();j++)
-         {
-            sum += curr.get(j);
-         }
-         if(sum == s)
-         {
-            ans.add(new ArrayList<Integer>(curr));
-         }
+         ans.add(new ArrayList<Integer>(curr));
          return;
       }
       curr.add(arr[i]);
-      subsets(arr, i+1, curr, ans, s);
-      curr.remove(curr.size() - 1);
-      subsets(arr, i+1, curr, ans, s);
+      subsets(arr,i+1,curr,ans);
+      curr.remove(curr.size()-1);
+      subsets(arr,i+1,curr,ans);
    }
-   
    public static void main(String[] args) {
-      Scanner sc = new Scanner(System.in);
-      int n = sc.nextInt();
-      int arr[] = new int[n];
-      for(int i = 0; i < n; i++)
-      {
-         int k = sc.nextInt();
-         arr[i] = k;
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            int k=sc.nextInt();
+            arr[i]=k;
+        }
+        ArrayList<ArrayList<Integer>> subsets = subset(arr);
+        System.out.println(subsets);
+
+        
       }
-      int s = sc.nextInt();
-      ArrayList<ArrayList<Integer>> subsets = subset(arr, s);
-      System.out.println("Subsets with sum " + s + ":");
-      System.out.println(subsets);
-      
-   }
+
 }
